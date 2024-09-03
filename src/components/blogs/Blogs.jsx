@@ -1,7 +1,7 @@
 import { Button } from "antd";
 
 import React, { useEffect, useState } from "react";
-import { Close } from "../close/close";
+import { Close } from "../close/Close";
 import axios from "../../api/index";
 
 const Blogs = ({ data }) => {
