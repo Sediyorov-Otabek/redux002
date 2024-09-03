@@ -1,8 +1,13 @@
 import axios from "axios";
 
 const mainUrl = axios.create({
-  baseURL: "https://dummyjson.com",
+  baseURL: "https://trade.namtech.uz",
 });
-console.log(mainUrl);
-
+mainUrl.interceptors.request.use((config) => {
+  let token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
 export default mainUrl;
